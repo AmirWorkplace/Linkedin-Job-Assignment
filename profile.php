@@ -55,7 +55,7 @@ include_once("./header.php");
         <div class="profile-bio">
           <div class="profile-bio-container">
             <div class="message">
-              <?php if ($change_img_message) {
+              <?php if (isset($change_img_message)) {
                 echo "<p class='danger'>$change_img_message</p>";
               } else echo ""; ?>
             </div>
@@ -117,12 +117,12 @@ include_once("./header.php");
           <div class="profile-action-container">
             <div>
               <div class="message">
-                <?php if ($profile_data_message) {
+                <?php if (isset($profile_data_message)) {
                   echo "<p class='danger'>$profile_data_message</p>";
                 } else echo ""; ?>
               </div>
               <div class="message">
-                <?php if ($change_password_message) {
+                <?php if (isset($change_password_message)) {
                   echo "<p class='danger'>$change_password_message</p>";
                 } else echo ""; ?>
               </div>

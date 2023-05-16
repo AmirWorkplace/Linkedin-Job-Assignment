@@ -32,7 +32,11 @@ if (isset($_POST['login_btn'])) {
           <div class="form">
             <form method="post">
               <h2>Login</h2>
-              <div class="message"><?php echo $message; ?></div>
+              <div class="message">
+                <?php if (isset($message)) {
+                  echo "<p class='danger'>{$message}</p>";
+                } ?>
+              </div>
               <div class="input_box">
                 <input type="email" placeholder="E-mail" name="email" required />
                 <i class="email"><ion-icon name="mail-outline"></ion-icon></i>

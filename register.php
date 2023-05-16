@@ -40,7 +40,11 @@ include_once("./header.php");
           <div class="form">
             <form method="post">
               <h2>Signup</h2>
-              <div class="message"><?php echo $message; ?></div>
+              <div class="message">
+                <?php if (isset($message)) {
+                  echo "<p class='danger'>{$message}</p>";
+                } ?>
+              </div>
               <div class="input_box">
                 <input type="text" placeholder="Username" name="username" required />
                 <i class="username"><ion-icon name="person-add-outline"></ion-icon></i>
