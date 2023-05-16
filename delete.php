@@ -9,9 +9,17 @@ include_once("./app/AuthenticationController.php");
 
 $Auth = new Auth();
 
+$sid = $_SESSION['id'];
+$message = "";
+
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  $message = $Auth->deleteUserAccount($conn, $id);
+
+  if ($sid === $id) {
+    $message = $Auth->deleteUserAccount($conn, $id);
+  } else {
+    $message = "You are in Wrong!";
+  }
 }
 
 ?>
