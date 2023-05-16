@@ -32,13 +32,13 @@ and more!
   credentials into the `config/db.php` files.
 
 - You can simply open your favorite web browser and open a new tab for browse
-  `(http://localhost/assignment/index.php)` or
-  `(http://localhost/assignment/login.php)` the link.
+  http://localhost/assignment/index.php or http://localhost/assignment/login.php
+  the link.
 - If you can first time hit the url you will see a login page, then you can
   login the website you can use the demo email`demoaccount@gmail.com` and
   password are `demoaccount`, which I set the database sql file in previous, or
   you can easily register a new account to browse
-  `(http://localhost/assignment/register.php)` link or simple click the register
+  http://localhost/assignment/register.php link or simple click the register
   blue text which are stay on the bottom of the login form's submit button.
 
 - At the last step, if you had carefully follow all the steps, it's will working
