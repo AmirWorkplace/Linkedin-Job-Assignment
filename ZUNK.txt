@@ -1,0 +1,113 @@
+
+
+ // echo json_encode([
+    //   "data_limit" => mysqli_num_rows($check_existing_profile),
+    //   "data" => mysqli_fetch_all($check_existing_profile, true)
+    // ]);
+      // Exist User's Profile --------->
+      /* move_uploaded_file($tmp_name, $img);
+
+      $query = "INSERT INTO `profile`(`user_id`, `profile_img`, `created_at`, `updated_at`) VALUES ($id,'$img','$created_at','$updated_at')";
+
+      if (mysqli_query($conn, $query)) {
+        header("location: profile.php");
+        return "Image saved successfully!";
+      } else {
+        return "Something went wrong, Please try Again!";
+      } */
+      // return "Profile Image exist Part!";
+            // Not Exist User's Profile ----->
+ /* $query = "INSERT INTO `profile`(`user_id`, `profile_img`, `created_at`, `updated_at`) VALUES ($id,'$img','$created_at','$updated_at')";
+
+      if (mysqli_query($conn, $query)) {
+        move_uploaded_file($tmp_name, $img);
+        // header("location: profile.php");
+        return "Image saved successfully!";
+      } else {
+        return "Something went wrong, Please try Again!";
+      } */
+
+
+  /*   */
+
+  // public function changeProfileImg($conn, $data, $id)
+  // {
+  //   $get_img = $_FILES['profile_img']['name'];
+  //   $tmp_name = $_FILES['profile_img']['tmp_name'];
+
+  // $created_at = gmdate('Y-m-d\TH:i:s\Z', strtotime('now'));
+  // $updated_at = gmdate('Y-m-d\TH:i:s\Z', strtotime('now'));
+
+  // $extension = pathinfo($get_img, PATHINFO_EXTENSION);
+  // $img_name = uniqid() . bin2hex(random_bytes(8)) . '.' . $extension;
+  // $img = "/uploads" . $img_name;
+
+  // // Move the uploaded file to the target folder
+
+  // if ($_FILES['profile_img']['error'] !== UPLOAD_ERR_OK) {
+  //   // Display or log the error message
+  // echo var_dump($_FILES['profile_img']);
+  // echo $get_img, $tmp_name;
+  // return "File upload error: " . json_encode($_FILES['profile_img']);
+  // }
+
+  // move_uploaded_file($tmp_name, "uploads/$get_img");
+
+  // $check_existing_profile = mysqli_query($conn, "SELECT * FROM `profile` WHERE `user_id`=$id");
+
+  // if (mysqli_num_rows($check_existing_profile) == 0) {
+  //   $query = "INSERT INTO `profile`(`user_id`, `profile_img`, `created_at`, `updated_at`) VALUES ($id,'$img','$created_at','$updated_at')";
+
+  //   if (mysqli_query($conn, $query)) {
+  //     header("location: profile.php");
+  //     return "Image saved successfully!";
+  //   } else {
+  //     return "Something went wrong. Please try again!";
+  //   }
+  // } else {
+  //   return "Profile image does not exist for this user!";
+  // }
+  // }
+
+  /* public function changeProfileImg($conn, $data, $id)
+  {
+    $tmp_name = $_FILES['profile_img']['tmp_name'];
+    $extension = pathinfo($_FILES['profile_img']['name'], PATHINFO_EXTENSION);
+    $img_name = uniqid() . '.' . $extension;
+    $destination = "uploads/" . $img_name;
+
+    if (move_uploaded_file($tmp_name, $destination)) {
+      // File moved successfully
+      // Perform any additional operations or database updates here
+      // ...
+
+      return "Image uploaded successfully!";
+    } else {
+      // Failed to move the file
+      return "Failed to upload image.";
+    }
+  } */
+
+  /* public function changeProfileImg($conn, $data, $id)
+  {
+    $get_img = $_FILES['profile_img']['name'];
+    $tmp_name = $_FILES['profile_img']['tmp_name'];
+
+    $destination_folder = "uploads/images/";
+    $destination_path = $destination_folder . $get_img;
+
+    // Create the "uploads" folder if it doesn't exist
+    if (!is_dir($destination_folder)) {
+      mkdir($destination_folder, 0777, true);
+    }
+
+    if (move_uploaded_file($tmp_name, $destination_path)) {
+      // File moved successfully
+      // Proceed with other operations
+      return 'true';
+    } else {
+      return 'false';
+      // Failed to move the file
+      // Handle the error
+    }
+  } */
