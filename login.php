@@ -1,5 +1,7 @@
 <?php
 
+$title = "Login Page";
+
 session_start();
 if (isset($_SESSION['email'])) {
   header("location: profile.php");
@@ -14,6 +16,7 @@ $Auth = new Auth();
 if (isset($_POST['login_btn'])) {
   $message = $Auth->login($conn, $_POST);
 }
+
 
 ?>
 

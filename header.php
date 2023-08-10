@@ -1,3 +1,13 @@
+<?php
+
+if ($_SERVER['REQUEST_URI'] === '/assignment/login.php/') {
+  header('Location: /assignment/login.php', true, 301);
+  exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,17 +15,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
   <link rel="stylesheet" href="./assets/css/custom_style.css">
   <link rel="stylesheet" href="./assets/css/profile.css">
   <title>
-    <?php
-    echo $title;
-
-
-    ?>
+    <?php echo $title ? $title : "Job Assignment"; ?>
   </title>
-  <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" /> -->
 
   <!-- Delete modal Styles -->
   <style>

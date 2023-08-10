@@ -1,4 +1,6 @@
 <?php
+// http://localhost/assignment
+$title = "Home";
 
 session_start();
 if (isset($_SESSION['email'])) {
@@ -23,12 +25,13 @@ if (isset($_POST['login_btn'])) {
 <body style="overflow: hidden;">
   <section class="main-body">
 
+    <!-- Add Navbar on the to  -->
     <?php include_once("./navbar.php"); ?>
 
     <div class="form-container">
       <section class="home">
         <div class="form_container">
-          <!-- <i class="uil uil-times form_close"></i> -->
+
           <div class="form">
             <form method="post">
               <h2>Login</h2>
@@ -79,3 +82,5 @@ if (isset($_POST['login_btn'])) {
   </script>
 
   <?php include_once("./footer.php"); ?>
+
+  <!-- http://127.0.0.1/assignment/index.php -->

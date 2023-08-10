@@ -61,8 +61,8 @@ class Profile
   public function changeProfileData($conn, $data, $id)
 
   {
-    $username = $data['username'];
-    $email = $data['email'];
+    $username = mysqli_real_escape_string($conn, $data['username']);
+    $email = mysqli_real_escape_string($conn, $data['email']);
     $updated_at = gmdate('Y-m-d\TH:i:s\Z', strtotime('now'));
 
     $check_existing_email = mysqli_query($conn, "SELECT * FROM `users` WHERE `email`='$email'");

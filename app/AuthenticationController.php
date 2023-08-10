@@ -4,15 +4,16 @@ class Auth
 {
   public function register($conn, $data)
   {
-    $name = $data['username'];
-    $email = $data['email'];
-    $password = $data['password'];
+    $name = mysqli_real_escape_string($conn, $data['username']);
+    $email = mysqli_real_escape_string($conn, $data['email']);
+    $password = mysqli_real_escape_string($conn, $data['password']);
     $role = 'user';
     $created_at = gmdate('Y-m-d\TH:i:s\Z', strtotime('now'));
     $updated_at = gmdate('Y-m-d\TH:i:s\Z', strtotime('now'));
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $check_unique_user = mysqli_query($conn, "SELECT * FROM `users` WHERE `email`='$email'");
+
     $query = "INSERT INTO `users`(`username`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES ( '$name','$email','$hashed_password','$role','$created_at','$updated_at')";
 
 
@@ -37,8 +38,8 @@ class Auth
 
   public function login($conn, $data)
   {
-    $email = $data['email'];
-    $password = $data['password'];
+    $email = mysqli_real_escape_string($conn, $data['email']);
+    $password = mysqli_real_escape_string($conn, $data['password']);
 
     $check_exist_user = mysqli_query($conn, "SELECT * FROM `users` WHERE `email`='$email'");
 
